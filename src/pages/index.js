@@ -30,12 +30,12 @@ const Homepage = styled.section`
   justify-content: center;
 `
 const Section = styled.section`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
   background: ${({bg}) => bg};
+  padding: 4rem 1rem;
 `
 const Container = styled.div`
   margin: 0 auto;
@@ -60,17 +60,24 @@ const Cards = styled.div`
   justify-content: space-between;
 `;
 const Card = styled.div`
-  background: url(${({bg}) => bg}) no-repeat 100%;
-  background-position: center;
-  object-fit: contain;
   padding: 1rem;
   width: 100%;
   max-width: calc(100% / 3);
-  height: 50vh;
   margin: 1em;
-`;
-const Heading = styled.h2`
   color: white;
+`;
+const CardImage = styled.div`
+  background: url(${({bg}) => bg}) no-repeat 100%;
+  background-position: center;
+  object-fit: contain;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+`;
+const Quote = styled.h3`
+  font-size: 2rem;
+  font-style: italic;
+  padding: 2rem;
 `;
 
 export default () => (
@@ -88,25 +95,41 @@ export default () => (
       </Homepage>
       <Section bg="#222">
         <Container>
-          <Heading>Recipes</Heading>
           <Cards>
-            <Card bg={carrot}>
+            <Card>
+              <CardImage bg={carrot} />
               <h3>
-                Choose
+                Quality
               </h3>
+              <p>
+                Fresh ingredients for tasty, home-cooked dinners.
+              </p>
             </Card>
-            <Card bg={brusq}>
+            <Card>
+              <CardImage bg={brusq} />
               <h3>
-                Call
+                Simplicity
               </h3>
+              <p>
+                Easy to follow recipes and perfectly measured ingredients.
+              </p>
             </Card>
-            <Card bg={crab}>
+            <Card>
+              <CardImage bg={crab} />
               <h3>
-                Delivery
+                Variety
               </h3>
+              <p>
+                From family classics and ten minute meals to Fine Dine In.
+              </p>
             </Card>
           </Cards>
         </Container>
+      </Section>
+      <Section bg="#ccc">
+        <Quote>
+          "The best decision for my partner and I as we both work long hours! We enjoy cooking from scratch, as we know what goes into what we are eating! There is a fantastic range of meals available, all super tasty! 100% recommend to anyone!"
+        </Quote>
       </Section>
     </Wrapper>
   </>
